@@ -20,7 +20,7 @@ export class MyAsyncPipe implements PipeTransform, OnDestroy {
         ).subscribe({
             next: value => {
                 this._currentValue = value;
-                this._ref.markForCheck();
+                this._ref.markForCheck(); // Marking conponent (and it's children) as dirty for next change detection cycle
             },
             error: error => {
                 console.error(error);
